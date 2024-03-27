@@ -1,4 +1,4 @@
-Sure, here's a concise summary:
+
 
 - **Display: Block**
   - Starts on a new line.
@@ -14,7 +14,7 @@ Sure, here's a concise summary:
 
 Block elements are like boxes that stack vertically, each on a new line, while inline elements are like beads on a string, flowing in line with text and wrapping alongside other content.
 
-Certainly, here’s a summary of CSS positioning:
+
 
 - **Static**
   - The default position; elements flow in the normal document layout order.
