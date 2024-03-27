@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>positioning in css </title>
+    <style>
+        .parent {
+  display: flex;
+  min-height: 200vh;
+  flex-direction: row;
+background-color: gray;
+position: relative;
+  padding: 20px 0; 
+  margin-top: 400px;
+
+}
+.child {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0 20px; 
+  border: 1px solid black;
+
+}
+.one{
+    background-color: red;
+    position: fixed;
+    top: 250px;
+
+
+}
+.two{
+    background-color: green;
+/* position: sticky;
+position: relative;
+position: absolute;
+position:fixed ;
+position: static; */
+top: 70px;
+
+}
+.three{
+    background-color: blue;
+}
+.four{
+    background-color: purple;
+}
+    </style>
+</head>
+<body>
+    <div class="parent">
+    
+        <div class="child one">One</div>
+        <div class="child two">Two</div>
+        <div class="child three">Three</div>
+        <div class="child four">Four</div>
+      </div>
+</body>
+</html>

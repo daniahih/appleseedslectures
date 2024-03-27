@@ -1,0 +1,15 @@
+h2{
+    background-color: red;
+}
+.block-example{
+    background-color: green;
+    width: 500px;
+    margin-top: 50px;
+
+}
+.inline-example{
+    background-color: pink;
+    margin-top: 50px;
+    width: 60px;
+    margin-left: 70px;
+}
