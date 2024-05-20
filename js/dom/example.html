@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full DOM Example</title>
+    <style>
+      .styled-text {
+        color: blue;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px 0;
+        padding: 10px;
+        border: 2px solid gray;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM Manipulation: Create, Modify, Style, and Delete</h1>
+    <div id="content"></div>
+    <button onclick="addElement()">Add Element</button>
+    <button onclick="modifyElement()">Modify Element</button>
+    <button onclick="removeElement()">Remove Element</button>
+
+    <script>
+      function addElement() {
+        // Create a new paragraph element
+        const newElement = document.createElement("p");
+        newElement.id = "newElement"; // Setting an ID for future reference
+        newElement.textContent = "This is a new element added to the DOM.";
+        document.getElementById("content").appendChild(newElement);
+      }
+
+      function modifyElement() {
+        // Modify the text and style of the newly added element
+        const element = document.getElementById("newElement");
+        if (element) {
+          element.textContent = "This text has been modified!";
+          element.classList.add("styled-text"); // Apply predefined styles from the CSS
+        } else {
+          alert("Element does not exist. Please add an element first.");
+        }
+      }
+
+      function removeElement() {
+        // Remove the element from the DOM
+        const element = document.getElementById("newElement");
+        if (element) {
+          element.parentNode.removeChild(element);
+        } else {
+          alert("Element does not exist or has already been removed.");
+        }
+      }
+    </script>
+  </body>
+</html>

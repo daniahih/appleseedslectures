@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Todo List Application</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .task {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+      .high {
+        border-color: #e53e3e;
+        background-color: #fee2e2;
+      }
+      .medium {
+        border-color: #dd6b20;
+        background-color: #fef3c7;
+      }
+      .low {
+        border-color: #3182ce;
+        background-color: #bee3f8;
+      }
+      button {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Advanced Todo List Application</h1>
+    <input type="text" id="taskInput" placeholder="Enter a new task..." />
+    <select id="prioritySelect">
+      <option value="high">High</option>
+      <option value="medium" selected>Medium</option>
+      <option value="low">Low</option>
+    </select>
+    <button onclick="addTask()">Add Task</button>
+    <div id="taskList"></div>
+
+    <script>
+      function addTask() {
+        const taskInput = document.getElementById("taskInput");
+        const prioritySelect = document.getElementById("prioritySelect");
+        if (taskInput.value.trim() === "") {
+          alert("Please enter a task.");
+          return;
+        }
+
+        const taskDiv = document.createElement("div");
+
+        const span = document.createElement("span");
+        taskDiv.appendChild(paragraph);
+        taskDiv.className = `task ${prioritySelect.value}`;
+        // taskDiv.textContent = taskInput.value;
+        span.textContent = taskInput.value;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.onclick = function () {
+          taskDiv.remove();
+        };
+
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.onclick = function () {
+          const newText = prompt("Edit your task:", span.textContent);
+          if (newText !== null && newText.trim() !== "") {
+            taskDiv.textContent = newText;
+            taskDiv.appendChild(deleteBtn); // Re-add delete button
+            taskDiv.appendChild(editBtn); // Re-add edit button
+          }
+        };
+
+        taskDiv.appendChild(deleteBtn);
+        taskDiv.appendChild(editBtn);
+        document.getElementById("taskList").appendChild(taskDiv);
+        taskInput.value = ""; // Clear the input after adding
+      }
+    </script>
+  </body>
+</html>
